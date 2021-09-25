@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+  <div class="container-fluid">
+    <div class="fakeimg" style="height:50px;">
+      <img src="../assets/logo.png" height="50px"></div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <a style="color: white;" >IONIC</a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" (click)="goTo('album')">Álbumes</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="goTo('cancion')">Canciones</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" (click)="goTo('logIn')">Salir</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <button type="button" (click)="openNotification(notificationsMD)" class="btn"><fa-icon class="text-light h3" [icon]="faBell"></fa-icon> <div class="badge bg-danger">{{notificationList.length}}</div></button>
+          <ng-template #notificationsMD let-modal>
+            <div class="modal-body">
+              <button type="button" class="btn-close float-end" (click)="modal.close()"></button>
+            </div>
+          </ng-template>
+          
+        </li>
+        <li class="nav-item active">
+          <p class="h3 text-light">{{userLogin}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
